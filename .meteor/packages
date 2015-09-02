@@ -1,0 +1,25 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+autopublish
+insecure
+tomi:upload-server
+tomi:upload-jquery
+coffeescript
+dbarrett:dropzonejs
+cfs:gridfs
+react
+iron:router
+underscore
+gabrielengel:konecty-magnific-popup
+jquery
+
+
+npm-container
+peerlibrary:fs
+ian:bootstrap-3
+simple:json-routes
