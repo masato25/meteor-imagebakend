@@ -1,0 +1,52 @@
+<template name="uploadmyimage">
+  <head>
+    <title>圖片管理後台</title>
+  </head>
+
+  <body>
+    <!-- {{> update_img}} -->
+    <div class="row">
+      <div class="container">
+        <div class="col-sm-9">
+          {{> image_view}}
+        </div>
+      </div>
+    </div>
+    <div class="row" id="parent-container">
+      <div class="container">
+        {{> image_preview}}
+      </div>
+    </div>
+  </body>
+</template>
+
+<template name="image_view">
+  <h3>圖片管理後台</h3>
+  {{> dropzone fileTypes='images' formData=myFormData }}
+  {{> upload_bootstrap fileTypes='images' multiple=flase formData=myFormData }}
+</template>
+
+<template name="image_preview">
+    <h3>{{ title }} {{msg}} </h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>順序</th>
+          <th>圖</th>
+          <th>調整</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each imgs}}
+          <tr>
+            <td>{{position}}</td>
+            <td>
+              <span class="image-popup-vertical-fit" href="images/{{ images_name }}" ><img id="userimage" src="images/{{ images_name }}" /></span>
+              </td>
+            <td> <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> | <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span><button class="deletefs">刪除</button> </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <font>{{addfunction}}</font>
+</template>
